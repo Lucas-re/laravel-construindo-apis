@@ -1,0 +1,1 @@
+## Exitem varias ferramentas para fazermos teste de APIs e uma das mais famosas é o Postman
