@@ -133,7 +133,7 @@ class SeriesController extends Controller
         $aSeasons = [];
         for ($i = 1; $i <= $request->seasonQty; $i++){
             $aSeasons[] = [
-                'series_id' => $serie->id,
+                'serie_id' => $serie->id,
                 'number' => $i
             ];
         }

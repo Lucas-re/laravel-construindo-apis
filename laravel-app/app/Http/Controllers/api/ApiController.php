@@ -16,7 +16,6 @@ class ApiController extends Controller
 
     public function store(SeriesFormRequest $request)
     {
-        dd($request->all());
         Serie::create($request->all());
 
         return response()
@@ -25,8 +24,13 @@ class ApiController extends Controller
 
     public function show(int $serie)
     {
-        $serie = Serie::whereId($serie)->with('seasons.episodes')->first();
-        return $serie;
+        $serieModel = Serie::with('seasons.episodes')->find($serie);
+
+        if($serieModel == null){
+            return response()->json(['message' => 'Series not found'], 404);
+        }
+        
+        return $serieModel;
     }
 
     public function update(Serie $series, SeriesFormRequest $request)

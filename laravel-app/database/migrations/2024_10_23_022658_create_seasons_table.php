@@ -19,8 +19,8 @@ return new class extends Migration
             /**
              * uma forma de fazer constraint
              */
-            //$table->unsignedBigInteger('series_id');
-            // $table->foreign('series_id')->references('id')->on('series');
+            //$table->unsignedBigInteger('serie_id');
+            // $table->foreign('serie_id')->references('id')->on('series');
 
 
             /**
@@ -28,7 +28,7 @@ return new class extends Migration
              */
 
             
-            $table->foreignId('series_id')->constrained()->onDelete('cascade');
+            $table->foreignId('serie_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
